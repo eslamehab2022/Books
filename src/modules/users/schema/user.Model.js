@@ -42,6 +42,13 @@ image:{
 },{
     timestamps:true
 })
+//hash password
+userSchem.pre("save",async function(next){
 
+    var user = this ; 
+    if (!user.isModified('password')) return next();
+
+    
+})
 const userModel = mongoose.models.User ||model('User',userSchem);
 export default userModel
