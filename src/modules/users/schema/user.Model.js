@@ -31,6 +31,9 @@ isLogin:{
 isActive:{
     type:Boolean,
     default:false
+},
+image:{
+    type:String
 }
 
 

@@ -1,7 +1,7 @@
 
 import jwt  from  "jsonwebtoken";
 import dotenv from "dotenv";
-dotenv.config()
+dotenv.config({})
 
 
 //create  a new Token
@@ -15,3 +15,4 @@ export const vrefiyToken = ({payload, signature= process.env.SIGNATURE_KEY}={})=
     const vrefiy = jwt.verify(payload,signature);
     return vrefiy
 };
+

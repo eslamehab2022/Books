@@ -2,6 +2,7 @@
 import dotenv from"dotenv";
 import { asyncHandelr } from './../utils/error';
 import { vrefiyToken } from "../utils/jt.js";
+import userModel from "../users/schema/user.Model.js";
 dotenv.config({})
 
 // start auhountication
@@ -12,12 +13,33 @@ return asyncHandelr(async(req,res,next)=>{
   return next(new Error("Invalid Bearer token", {cause:400}))
  }
   
-const token = Auth.split(process.env.BERAER_KEY)[0];
+const token = Auth.split(process.env.BERAER_KEY)[1];
 if(!token){
     return next(new Error(`Invalid token`,{cause:400}))
 }
+const decoded = vrefiyToken({payload:token});
+if(!decoded?.id){
+    return next(new Error(`In-Valid id`,{cause:400}))
+}
+
+
+const users = await userModel.findById(decoded.id).select("email image role");
+if(!users){
+    return next(new Error(`user not found`,{cause:404}))
+}
+
+if(!acessRoles.includes(users.role)){
+    next(new Error(`user is  not authourized`,{cause:403}))
+}
+
+
+req.user=user
+
+
+next()
 
 
 })
+
 
 }
