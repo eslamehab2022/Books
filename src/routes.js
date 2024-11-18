@@ -12,7 +12,6 @@ const initApp =(app,express)=>{
  app.use(express.json({}));
  connectionDb();
  app.use("/api/v1/Auth",authRouter)
-
  app.use("/api/v1/user",userRouter)
  app.use(errorGlobal);
 }

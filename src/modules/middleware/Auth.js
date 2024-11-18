@@ -22,24 +22,17 @@ if(!decoded?.id){
     return next(new Error(`In-Valid id`,{cause:400}))
 }
 
-
-const users = await userModel.findById(decoded.id).select("email image role");
-if(!users){
+const user = await userModel.findById(decoded.id).select("email image role");
+if(!user){
     return next(new Error(`user not found`,{cause:404}))
 }
-
-if(!acessRoles.includes(users.role)){
-    next(new Error(`user is  not authourized`,{cause:403}))
+//
+if(!acessRoles.includes(user.role)){
+    next(new Error(`user is Not Authourized`,{cause:403}))
 }
 
-
-req.user=user
-
-
+req.user=user;
 next()
 
+})}
 
-})
-
-
-}

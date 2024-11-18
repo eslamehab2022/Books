@@ -1,7 +1,6 @@
 
 import  mongoose, {model, Schema} from "mongoose"
-
-
+import { statusEnum, usersGender } from "../../utils/enum.js";
 const userSchem = new Schema({
 
 firstName:{
@@ -17,12 +16,14 @@ password:{
     type:String
 },
 status:{
-    type:Number,
-    default:0
+  type:Number,
+ default:statusEnum.Offline,
+ enum:Object.values(statusEnum)
 },
 gender:{
     type:Number,
-    default:0
+    default:usersGender.Male,
+    enum:Object.values(usersGender)
 },
 isLogin:{
     type:Boolean,
