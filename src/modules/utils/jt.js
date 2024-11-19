@@ -5,8 +5,8 @@ dotenv.config({})
 
 
 //create  a new Token
-export const createToken = ({payload, signature=process.env.SIGNATURE_KEY,expire=60*60}={})=>{
-const token = jwt.sign(payload,signature,{expire:parseInt(expire)})
+export const createToken = ({payload, signature=process.env.SIGNATURE_KEY,expiresIn=60*60}={})=>{
+const token = jwt.sign(payload,signature,{expiresIn:parseInt(expiresIn)})
 return token;
 }
 

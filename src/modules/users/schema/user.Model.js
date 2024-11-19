@@ -2,9 +2,8 @@
 import  mongoose, {model, Schema} from "mongoose"
 import { statusEnum, usersGender } from "../../utils/enum.js";
 import dotenv from "dotenv";
+import  bcrypt  from 'bcrypt';
 dotenv.config({});
-
-import jwt from "bcrypt"
 
 const userSchem = new Schema({
 
@@ -16,6 +15,9 @@ lastName:{
 },
 email:{
     type:String
+},
+phone:{
+type:String
 },
 password:{
     type:String,

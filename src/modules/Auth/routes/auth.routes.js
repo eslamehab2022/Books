@@ -6,7 +6,7 @@ const authRouter = Router();
 authRouter.post('/signup',authController.signUp);
 
 //sign in user
-authRouter.post('/signup',authController.login);
+authRouter.post('/login',authController.login);
 
 // forget password used for login
 authRouter.post('/forgetpassword', authController.forgetPassword)
