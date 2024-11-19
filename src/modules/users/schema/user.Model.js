@@ -53,18 +53,22 @@ isDeleted:{
     timestamps:true
 })
 //hash password
-userSchem.pre("save",async function(next){
 
-    var user = this ; 
-    if (!user.isModified('password')) return next();
-    jwt.hash(user.password,process.env.SALT,function(err,hash){
-    if(err) return next(err);
 
-    user.password = hash;
-    next();
-
-})
-})
+userSchem.pre("save", async function (next) {
+    const user = this;
+  
+    if (!user.isModified("password")) {
+      return next();
+    }
+    const hashValues = await bcrypt.hash(
+      this.password,
+      parseInt(process.env.SALT_WORK_FACTOR)
+    );
+  
+    this.password = hashValues;
+  });
+  
 const userModel = mongoose.models.User ||model('User',userSchem);
 export default userModel
 
