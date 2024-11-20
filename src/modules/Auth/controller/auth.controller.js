@@ -2,7 +2,7 @@ import userModel from "../../users/schema/user.Model.js";
 import { asyncHandelr } from "../../utils/error.js";
 import bcrypt from "bcrypt"
 import dotenv from "dotenv";
-import { createToken, vrefiyToken } from "../../utils/jt.js";
+import { createToken } from "../../utils/jt.js";
 dotenv.config({})
  // user sign up in Application
 export const signUp = asyncHandelr(async(req,res,next)=>{
@@ -21,7 +21,7 @@ export const login = asyncHandelr(async(req,res,next)=>{
 const{email, password}=req.body
 const user= await userModel.findOne({email:email});
 if(!user ) return next(new Error(`user not found`,{cause:404}));
-const match =    bcrypt.compareSync(req.body.password,user.password);
+const match =    bcrypt.compareSync(password,user.password);
 if(!match) return next(new Error(`password mismatch`,{cause:400}))
 
   const Token = createToken({
@@ -35,7 +35,12 @@ if(!match) return next(new Error(`password mismatch`,{cause:400}))
 return res.status(200).json({succes:true,message:`user login Done`, results:Token});
 
 });
+// forgetPassword
 export const forgetPassword = asyncHandelr(async(req,res,next)=>{
+    const {email}= req.body;
+    const checkEmail = await userModel.findOne({email: email});
+    if(checkEmail) return next (new Error('Email not found'));
 
 });
+
 
