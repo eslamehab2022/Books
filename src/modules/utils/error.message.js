@@ -1,6 +1,6 @@
 
 
- export const handelMessage = (lang , fialdAr="الحقل" ,faildEn="field", max =5000 , min= 4)=>{
+ export const handelMessage = (lang , fieldAr="الحقل" ,fieldEn="field", max =5000 , min= 4)=>{
 
 const messages= {
 en:{
@@ -19,7 +19,7 @@ en:{
     "array.max": `${fieldEn} Must contain at most ${max} items`,
 },
 ar:{
-    "any.required": `${fialdAr} مطلوب`,
+    "any.required": `${fieldAr} مطلوب`,
     "string.empty": `لا يمكن أن يكون ${fieldAr} فارغًا`,
     "string.pattern.base": `تنسيق ${fieldAr} غير صالح`,
     "string.min": `يجب أن يكون ${fieldAr} على الأقل ${min} حروف`,
