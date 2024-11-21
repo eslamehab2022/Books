@@ -12,4 +12,4 @@ authRouter.post('/login',authController.login);
 authRouter.post('/forgetpassword', authController.forgetPassword)
 
 
-export default authRouter
+export default authRouter   

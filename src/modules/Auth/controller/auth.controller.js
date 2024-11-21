@@ -40,7 +40,4 @@ export const forgetPassword = asyncHandelr(async(req,res,next)=>{
     const {email}= req.body;
     const checkEmail = await userModel.findOne({email: email});
     if(checkEmail) return next (new Error('Email not found'));
-
 });
-
-
