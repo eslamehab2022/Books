@@ -17,3 +17,4 @@ export const errorGlobal =(err,req,res,next)=>{
     }
 
 }
+
