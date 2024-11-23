@@ -1,8 +1,6 @@
 import mongoose, { model, Schema } from "mongoose";
 
-
 const categorySchema = new Schema({
-
     name:{
         type:String
     },
@@ -20,6 +18,6 @@ const categorySchema = new Schema({
 });
 
 const categoryModel = mongoose.models.Category || model('Category',categorySchema);
-   
+
 
 export default categoryModel
