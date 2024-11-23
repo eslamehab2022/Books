@@ -3,12 +3,17 @@ import { asyncHandelr } from "../../utils/error.js";
 import bcrypt from "bcrypt"
 import dotenv from "dotenv";
 import { createToken } from "../../utils/jt.js";
+import { sendMail } from "../../utils/mail.js";
 dotenv.config({})
  // user sign up in Application
 export const signUp = asyncHandelr(async(req,res,next)=>{
     const checkUser= await userModel.findOne({email:req.body.email})
     if(checkUser){
         return next(new Error(`user already exists`,{cause:400}))
+    }
+   await sendMail({to:req.body.email, subject:`welcome to Book`,text:`hello users from Applications`});
+    if(!sendMail){
+        return next(new Error(`email not found`,{cause:404}))
     }
     const user = await userModel.create({...req.body});
     return res.status(201).json({succes:true, message:`user signed up successfully`,user})

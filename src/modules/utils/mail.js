@@ -43,10 +43,6 @@ export const sendMail = async ({ to, subject, html = "", text = "" } = {}) => {
 
 
 
-
-
-
-
 // export const sendMail =({to, subject ,html , text}={})=>{
 
 //     const msg = {
