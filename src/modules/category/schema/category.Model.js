@@ -13,11 +13,9 @@ const categorySchema = new Schema({
     }
 },{
 
- timestamps:true
 
+ timestamps:true
 });
 
 const categoryModel = mongoose.models.Category || model('Category',categorySchema);
-
-
 export default categoryModel
