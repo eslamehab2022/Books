@@ -1,4 +1,4 @@
-import mongoose, { Schema, Types } from "mongoose";
+import mongoose, { model, Schema, Types } from "mongoose";
 
 
 const subcategorySchema= new Schema({
@@ -20,6 +20,6 @@ isDeleted:{
 });
 
 
-const subCategoryModel = mongoose.models.SubCategory ||model('SubCategory', subcategorySchema);
+const subCategoryModel = mongoose.models.SubCategory || model('SubCategory', subcategorySchema);
 
 export default subCategoryModel
