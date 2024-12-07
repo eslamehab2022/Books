@@ -1,5 +1,4 @@
 
-
 export const usersGender ={
     Male:0,
     Female:1,
@@ -9,5 +8,6 @@ export const statusEnum ={
     Offline:1,
     Blocked:2
 };
+
 
 
