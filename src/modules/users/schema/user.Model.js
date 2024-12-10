@@ -47,6 +47,10 @@ image:{
 isDeleted:{
     type:Boolean,
     default:false
+},
+timeOut:{
+    type:Date,
+    default:null
 }
 
 
