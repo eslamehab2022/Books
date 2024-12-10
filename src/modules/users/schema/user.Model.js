@@ -51,6 +51,9 @@ isDeleted:{
 timeOut:{
     type:Date,
     default:null
+},
+idNumber:{
+    type:String
 }
 
 
