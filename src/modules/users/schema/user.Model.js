@@ -7,52 +7,54 @@ dotenv.config({});
 
 const userSchem = new Schema({
 
-    firstName: {
-        type: String
-    },
-    lastName: {
-        type: String
-    },
-    email: {
-        type: String
-    },
-    phone: {
-        type: String
-    },
-    password: {
-        type: String,
-        required: true
-    },
-    status: {
-        type: Number,
-        default: statusEnum.Offline,
-        enum: Object.values(statusEnum)
-    },
-    gender: {
-        type: Number,
-        default: usersGender.Male,
-        enum: Object.values(usersGender)
-    },
-    isLogin: {
-        type: Boolean,
-        default: false
-    },
-    isActive: {
-        type: Boolean,
-        default: false
-    },
-    image: {
-        type: String
-    },
-    isDeleted: {
-        type: Boolean,
-        default: false
-    },
-    timeOut: {
-        type: Date,
-        default: null
-    }
-
+firstName:{
+    type:String
+},
+lastName:{
+    type:String
+},
+email:{
+    type:String
+},
+phone:{
+type:String
+},
+password:{
+    type:String,
+    required:true
+},
+status:{
+  type:Number,
+ default:statusEnum.Offline,
+ enum:Object.values(statusEnum)
+},
+gender:{
+    type:Number,
+    default:usersGender.Male,
+    enum:Object.values(usersGender)
+},
+isLogin:{
+    type:Boolean,
+    default:false
+},
+isActive:{
+    type:Boolean,
+    default:false
+},
+image:{
+    type:String
+},
+isDeleted:{
+    type:Boolean,
+    default:false
+},
+timeOut:{
+    type:Date,
+    default:null
+},
+idNumber:{
+    type:String
+}
 
 
 }, {
