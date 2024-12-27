@@ -1,30 +1,27 @@
-import mongoose ,{Types, models}from "mongoose";
+import mongoose, { model, Schema, Types } from "mongoose";
+
+const taskchema = new Schema({
+    userId:{
+        type:Types.ObjectId
+    },
+    isDeleted:{
+        type:Boolean,
+        default:false
+    },
+    screenChoot:{
+        type:[String]
+    },
+    startTime:{
+        type:String
+    },
+    endTime:{
+        type:String
+    }
+},{
 
 
-// create schema for task
-const taskSchema = new mongoose.Schema({
+ timestamps:true
+});
 
-
-userId:{
-type:Types.ObjectId,
-    ref:"User"
-
-},
-
-    name:{
-        type:String,
-        required:true
-}
-
-
-
-},{timeseries:true}
-
-)
-
-
-
-const task = mongoose.model || models.Task("Task",taskSchema);
-
-
-export default task;
+const taskModel = mongoose.models.Task || model('Task',taskchema);
+export default taskModel
