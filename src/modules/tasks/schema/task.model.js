@@ -14,6 +14,10 @@ const taskchema = new Schema({
     startTime:{
         type:String
     },
+    taskData:{
+        type:Date
+    },
+
     endTime:{
         type:String
     }
