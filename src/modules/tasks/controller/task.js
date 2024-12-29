@@ -12,4 +12,4 @@ export const onTask = asyncHandelr(async(req , resizeBy,next)=>{
     const task = await taskModel.findById(req.params.taskId);
     if(!task) return next({statusCode:404, message:"Task not found"})
     return res.status(200).json({tasks:task})
-});
+});  
