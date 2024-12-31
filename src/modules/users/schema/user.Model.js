@@ -50,11 +50,16 @@ isDeleted:{
 },
 timeOut:{
     type:Date,
-    default:null
+    default:Date.now()
 },
 idNumber:{
     type:String
-}
+},
+startTime: Date,
+endTime: Date,
+screenshots:{
+    type: [String], // Paths to stored screenshots
+} ,
 
 
 }, {
