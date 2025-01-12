@@ -1,9 +1,9 @@
 import mongoose, { model, Schema, Types } from "mongoose";
 
 const taskchema = new Schema({
-    userId:{
+    assignTo:[{
         type:Types.ObjectId
-    },
+    }],
     isDeleted:{
         type:Boolean,
         default:false

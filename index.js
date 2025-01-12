@@ -12,6 +12,7 @@ app.use(morgan("tiny"));
 const port = 8000|| process.env.PORT 
 initApp(app,express);
 
+// start to server  in app 
 
 
 app.get('/', (req, res) => res.send('Hello World!'))

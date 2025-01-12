@@ -14,9 +14,6 @@ const connectionDb = async()=>{
         console.log(`Connection to database error: ${err}`);
     })
 
-
-
-
 };
 
 

@@ -17,7 +17,6 @@ export const signUp = asyncHandelr(async(req,res,next)=>{
     }
     const user = await userModel.create({...req.body});
     return res.status(201).json({succes:true, message:`user signed up successfully`,user})
-    
 });
 
 
@@ -40,9 +39,12 @@ if(!match) return next(new Error(`password mismatch`,{cause:400}))
 return res.status(200).json({succes:true,message:`user login Done`, results:Token});
 
 });
+
 // forgetPassword
 export const forgetPassword = asyncHandelr(async(req,res,next)=>{
     const {email}= req.body;
     const checkEmail = await userModel.findOne({email: email});
     if(checkEmail) return next (new Error('Email not found'));
+    // forgeted Password Email send 
 });
+

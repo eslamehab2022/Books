@@ -10,7 +10,6 @@ import connectionDb from "./server/connection.js";
 
 
 const initApp =(app,express)=>{
-
  app.use(express.json({}));
  connectionDb();
  app.use("/api/v1/Auth",authRouter);

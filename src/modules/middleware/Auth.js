@@ -34,5 +34,5 @@ if(!acessRoles.includes(user.role)){
 req.user=user;
 next()
 
-})}
+})} 
 
