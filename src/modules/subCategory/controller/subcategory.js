@@ -12,7 +12,7 @@ export const  getAllSubCategory = asyncHandelr(async(req,res,next)=>{
 
 // create subCategorys
 export const  createSubCategory = asyncHandelr(async(req,res,next)=>{
-    if(!await categoryModel.findById(req.body.categoryId)){
+    if(!await categoryModel.findById(req.params.categoryId)){
       return next(new Error(`category not found`,{cause:404}))
     }
     const subcategory = await subCategoryModel.create(req.body);
@@ -36,7 +36,7 @@ export const deleteSubCategorys =asyncHandelr(async(req,res,next)=>{
    return next(new Error(`subcategory not found`,{cause:404}));
   };
 
-await subCategoryModel.deleteMany({ _id :{ $in :req.prams.subcategoryId }});
+await subCategoryModel.deleteMany({ _id :{ $in :req.params.subcategoryId }});
 return res.sendStatus(204);
 });
 

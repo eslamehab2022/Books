@@ -1,5 +1,4 @@
 import { Router } from "express";
-
 import * as subCategoryController from "../controller/subcategory.js"
 const subcategoryRouter = Router({mergeParams:true});
 
@@ -7,7 +6,7 @@ const subcategoryRouter = Router({mergeParams:true});
 // get all subcategories
 subcategoryRouter.get('/',subCategoryController.getAllSubCategory);
 // create  subcategories
-subcategoryRouter.post('/:categoryId/subcategory',subCategoryController.createSubCategory);
+subcategoryRouter.post('/',subCategoryController.createSubCategory);
 // updates  subcategories
 subcategoryRouter.patch('/:subcategoryId',subCategoryController.updateSubcategory);
 // delete subcategories
