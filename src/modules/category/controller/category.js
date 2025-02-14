@@ -63,5 +63,5 @@ export const deleteAllCategorys = asyncHandelr(async (req, res, next) => {
 
   await categoryModel.deleteMany({});
   await subCategoryModel.deleteMany({}) ;
-return res.status(204).json("done");
+return res.sendStatus(204);
 })
