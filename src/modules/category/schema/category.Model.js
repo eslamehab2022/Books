@@ -1,4 +1,4 @@
-import mongoose, { model, Schema } from "mongoose";
+import mongoose, { model, Schema, Types } from "mongoose";
 
 const categorySchema = new Schema({
     name:{
@@ -10,6 +10,9 @@ const categorySchema = new Schema({
     },
     image:{
         type:String
+    },
+    createdBy:{
+   type:Types.ObjectId
     }
 },{
 

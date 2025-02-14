@@ -5,6 +5,12 @@ import { vrefiyToken } from "../utils/jt.js";
 import userModel from "../users/schema/user.Model.js";
 dotenv.config({})
 
+
+
+export const roles = {
+    ...userRoleEnums,
+  };
+  
 // start auhountication
 export const Auth =(acessRoles =[])=>{
 return asyncHandelr(async(req,res,next)=>{
@@ -26,7 +32,7 @@ const user = await userModel.findById(decoded.id).select("email image role");
 if(!user){
     return next(new Error(`user not found`,{cause:404}))
 }
-//
+// wanted alone this  for him and closers //
 if(!acessRoles.includes(user.role)){
     next(new Error(`user is Not Authourized`,{cause:403}))
 }

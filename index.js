@@ -3,16 +3,26 @@ import initApp from './src/routes.js'
 import dotenv from "dotenv";
 import morgan from 'morgan';
 import cors from 'cors';
+import { fileURLToPath } from 'url';
+import path from 'path';
+const __filename = fileURLToPath(import.meta.url);
 dotenv.config({})
 const app = express()
 app.use(cors());
 app.use(morgan("tiny"));
+const port = 8000 || process.env.PORT
+initApp(app, express);
 
 
-const port = 8000|| process.env.PORT 
-initApp(app,express);
 
-// start to server  in app 
+
+
+
+
+
+
+
+
 
 
 app.get('/', (req, res) => res.send('Hello World!'))

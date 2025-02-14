@@ -36,6 +36,9 @@ if(!match) return next(new Error(`password mismatch`,{cause:400}))
         email: user.email
     }, expiresIn: '1h'
 });
+// when user  login is successful retrun Actuve
+user.isActive = true;
+await user.save();
 return res.status(200).json({succes:true,message:`user login Done`, results:Token});
 
 });

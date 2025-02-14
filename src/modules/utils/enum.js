@@ -10,4 +10,6 @@ export const statusEnum ={
 };
 
 
-
+export const  userRoleEnums = Object.freeze({
+    
+})
