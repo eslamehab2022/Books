@@ -43,25 +43,3 @@ export const sendMail = async ({ to, subject, html = "", text = "" } = {}) => {
 
 
 
-// export const sendMail =({to, subject ,html , text}={})=>{
-
-//     const msg = {
-//         to: to, 
-//         from: process.env.EMAIL_APP, 
-//         subject:subject,
-//         text: text,
-//         html: html,
-//       }
-      
-//       sgMail
-//         .send(msg)
-//         .then((response) => {
-//           console.log(response[0].statusCode)
-//           console.log(response[0].headers)
-//         })
-//         .catch((error) => {
-//           console.error(error)
-//         })
-
-//         return msg;
-//       }

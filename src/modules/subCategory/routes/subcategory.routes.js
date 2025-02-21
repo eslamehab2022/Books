@@ -5,6 +5,8 @@ const subcategoryRouter = Router({mergeParams:true});
 
 // get all subcategories
 subcategoryRouter.get('/',subCategoryController.getAllSubCategory);
+// get one subcategorie
+subcategoryRouter.get('/:subcategoryId',subCategoryController.oneSubCategorys);
 // create  subcategories
 subcategoryRouter.post('/',subCategoryController.createSubCategory);
 // updates  subcategories
