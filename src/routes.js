@@ -1,4 +1,5 @@
 import authRouter from "./modules/Auth/routes/auth.routes.js";
+import bookRouter from "./modules/Books/routes/Books.routes.js";
 import categoryRouter from "./modules/category/routes/category.routes.js";
 import subcategoryRouter from "./modules/subCategory/routes/subcategory.routes.js";
 import userRouter from "./modules/users/routes/users.routes.js";
@@ -16,6 +17,8 @@ const initApp =(app,express)=>{
  app.use("/api/v1/user",userRouter);
  app.use("/api/v1/category",categoryRouter);
  app.use("/api/v1/subcategory",subcategoryRouter);
+ app.use("/api/v1/book",bookRouter);
+
 
 
 
