@@ -8,7 +8,11 @@ const bookRouter =Router();
 
 // get allBooks 
 
-bookRouter.get('/',bookController.getAllBooks)
+bookRouter.get('/',bookController.getAllBooks);
+
+// get one Book 
+bookRouter.get('/:id',bookController.getOneBook)
+
 
 
 

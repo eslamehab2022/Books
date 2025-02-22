@@ -12,3 +12,26 @@ const books = await bookModel.find({});
 return res.status(200).json({books})
 
 });
+
+
+export const getOneBook = asyncHandelr(async (req,res,next)=>{
+ const book = await bookModel.findById(req.params.id);
+
+return res.status(200).json({book})
+
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
