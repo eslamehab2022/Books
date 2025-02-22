@@ -13,7 +13,7 @@ return res.status(200).json({books})
 
 });
 
-
+// get one book 
 export const getOneBook = asyncHandelr(async (req,res,next)=>{
  const book = await bookModel.findById(req.params.id);
 
